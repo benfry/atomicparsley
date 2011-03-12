@@ -16,6 +16,7 @@
     Suite 330, Boston, MA 02111-1307, USA.  Or www.fsf.org
 
     Copyright ©2006-2007 puck_lock
+    with contributions from others; see the CREDITS file
                                                                    */
 //==================================================================//
 
@@ -395,7 +396,7 @@ uint16_t OSX_ProbeTargetDrive(const char* id3args_drive, char* mcdi_data) {
 	uint16_t mcdi_data_len = 0;
 	io_object_t	cdobject = MACH_PORT_NULL;
 	
-	if (memcmp(id3args_drive, "disk", 4) != 0) {
+	if (strncmp(id3args_drive, "disk", 4) != 0) {
 		OSX_ScanForCDDrive();
 		exit(0);
 	}
